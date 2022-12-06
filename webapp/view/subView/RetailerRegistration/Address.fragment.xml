@@ -1,0 +1,147 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:micro="sap.suite.ui.commons" xmlns:core="sap.ui.core">
+    <FlexBox class="sapUiMediumMarginTop" visible="{viewModel>/sStep4}" justifyContent="Center" alignContent="Center">
+        <form:SimpleForm width="{oFiexibleLayout>/Width}" title="Address Details" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="12" columnsXL="1" columnsL="2" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+            <form:content>
+                <VBox>
+                    <Label text="{i18n>AddressType}" design="Bold" />
+                    <ComboBox width="100%" items="{registrationViewModel>/ADDRESSTYPE}" selectedKey="{viewModel>/address/0/ADDRESS_TYPE}" change="onAddressTypeChange">
+                        <core:ListItem text="{registrationViewModel>LABEL_CODE}" key="{registrationViewModel>OBJECT_ID}" />
+                    </ComboBox>
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>AddressLine1}" design="Bold" />
+                    <TextArea rows="3" value="{viewModel>/address/0/ADDRESS_LINE_1}" width="100%" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>AddressLine2}" design="Bold" />
+                    <TextArea rows="3" value="{viewModel>/address/0/ADDRESS_LINE_2}" width="100%" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12"  />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>AddressLine3}" design="Bold" />
+                    <TextArea rows="3" value="{viewModel>/address/0/ADDRESS_LINE_3}" width="100%" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12"  />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>CountryCode}" design="Bold" />
+                    <ComboBox width="100%" items="{registrationViewModel>/COUNTRY-CODE}" selectedKey="{viewModel>/address/0/COUNTRY_CODE}" change="onCountryChange">
+                        <core:ListItem text="{registrationViewModel>COUNTRY_NAME}" key="{registrationViewModel>COUNTRY_CODE}" />
+                    </ComboBox>
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>State}" design="Bold" />
+                    <ComboBox id="cbState" enabled="false" width="100%" items="{registrationViewModel>/STATE}" selectedKey="{viewModel>/address/0/STATE}">
+                        <core:ListItem text="{registrationViewModel>STATE_NAME}" key="{registrationViewModel>STATE_CODE}" />
+                    </ComboBox>
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>City}" design="Bold" />
+                    <Input value="{viewModel>/address/0/CITY}" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="{i18n>PostalCode}" design="Bold" />
+                    <Input type="Number" value="{viewModel>/address/0/POSTAL_CODE}" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Button text="{i18n>Addaddress}" press="onAddAddress" width="100%" class="button1 header2" enabled="{=${registrationViewModel>/retailerReg/0/ADDRESS/length}&lt; 3}" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12"  />
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Button text="{i18n>ProceedOther}" press="onNavToOthersInfo" width="100%" class="button1 header2" />
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                    </layoutData>
+                </VBox>
+            </form:content>
+        </form:SimpleForm>
+    </FlexBox>
+    <FlexBox visible="{viewModel>/sStep4}" justifyContent="Center" alignContent="Center">
+        <form:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" columnsXL="1" columnsL="1" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+            <form:content>
+                <VBox>
+                    <Table inset="true" mode="None" items="{registrationViewModel>/retailerReg/0/ADDRESS}">
+                        <columns>
+                            <Column>
+                                <Text text="{i18n>AddressType}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true">
+                                <Text text="{i18n>AddressLine1}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="{i18n>AddressLine2}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="{i18n>AddressLine3}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="Country" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="{i18n>State}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="{i18n>City}" />
+                            </Column>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                <Text text="{i18n>PostalCode}" />
+                            </Column>
+                            <!-- <Column hAlign="End">
+                                <Text text="" />
+                            </Column> -->
+                            <Column  width="7rem">
+                                <Text text="" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <Text text="{parts:[{path:'registrationViewModel>ADDRESS_TYPE'},{path:'registrationViewModel>/ADDRESSTYPE'}], formatter:'.formatter._getDescription'}" />
+                                    <Text text="{registrationViewModel>ADDRESS_LINE_1}" />
+                                    <Text text="{registrationViewModel>ADDRESS_LINE_2}" />
+                                    <Text text="{registrationViewModel>ADDRESS_LINE_3}" />
+                                    <Text text="{parts:[{path:'registrationViewModel>COUNTRY_CODE'},{path:'registrationViewModel>/COUNTRY-CODE'}], formatter:'.formatter._getCountryDescription'}" />
+                                    <Text text="{registrationViewModel>STATE}" />
+                                    <Text text="{registrationViewModel>CITY}" />
+                                    <Text text="{registrationViewModel>POSTAL_CODE}" />
+                                    <HBox wrap="Wrap">
+
+                                        <Button tooltip="{i18n>Delete}" press=".onDeleteAddressType" icon="sap-icon://edit" type="Transparent"/>
+                                        <Button tooltip="{i18n>Delete}" class="sapUiTinyMarginBegin" press=".onDeleteAddressType" icon="sap-icon://delete" type="Transparent"/>
+                    
+                                    </HBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                    <layoutData>
+                        <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                    </layoutData>
+                </VBox>
+            </form:content>
+        </form:SimpleForm>
+    </FlexBox>
+</core:FragmentDefinition>

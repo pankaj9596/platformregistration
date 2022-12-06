@@ -1,0 +1,36 @@
+<mvc:View controllerName="usermanagement.platformregistration.controller.RetailerRegistration"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:micro="sap.suite.ui.commons"
+    xmlns:core="sap.ui.core">
+       
+    <Page   title="{i18n>title}" backgroundDesign="List" showHeader="false" showFooter="{viewModel>/sStep6}">
+    		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" text="Draft" press="onSubmit($event,'platformrequest?action=save')"/>
+				<Button type="Emphasized" text="Submit" press="onSubmit($event,'platformrequest?action=submit')"/>
+			</OverflowToolbar>
+		</footer>
+        <content>
+        <FlexBox  justifyContent="Center">
+                            <micro:MicroProcessFlow id="idMP">
+                                <micro:content>
+                                    <micro:MicroProcessFlowItem  class="suplierCss classPurpledot1" />
+                                    <micro:MicroProcessFlowItem class="suplierCss classPurpledot" press="onNavToBasicInfo" />
+                                    <micro:MicroProcessFlowItem class="suplierCss" press="onNavToRetailInfo" />
+                                    <micro:MicroProcessFlowItem class="suplierCss" press="onNavToContactInfo" />
+                                    <micro:MicroProcessFlowItem class="suplierCss" press="onNavToAddressInfo" />
+                                    <micro:MicroProcessFlowItem class="suplierCss" press="onNavToOthersInfo" />
+                                    <micro:MicroProcessFlowItem class="suplierCss" press="onNavToReview" />
+                                </micro:content>
+                            </micro:MicroProcessFlow>
+                        </FlexBox>
+                        <core:Fragment fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.BasicInformation" type="XML" />
+                        <core:Fragment  fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.RetailersInformation" type="XML" />
+                        <core:Fragment  fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.ContactInformation" type="XML" />
+                        <core:Fragment  fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.Address" type="XML" />
+                        <core:Fragment  fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.OtherInformation" type="XML" />
+                        <core:Fragment  fragmentName="usermanagement.platformregistration.view.subView.RetailerRegistration.Review" type="XML" />
+        </content>
+    </Page>
+</mvc:View>

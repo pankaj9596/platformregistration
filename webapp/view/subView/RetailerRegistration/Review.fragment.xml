@@ -1,0 +1,322 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:micro="sap.suite.ui.commons" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap">
+    <uxap:ObjectPageLayout enableLazyLoading="false" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" visible="{viewModel>/sStep6}">
+        <uxap:sections>
+            <uxap:ObjectPageSection title="{i18n>BasicInformation}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <FlexBox justifyContent="Center" alignContent="Center">
+                                <form:SimpleForm width="{oFiexibleLayout>/Width}" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="12" columnsXL="1" columnsL="2" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+                                    <form:content>
+                                        <VBox>
+                                            <Label text="{i18n>EmailID}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/EMAIL_ID}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>Title}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/TITLESEQID}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>FirstName}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/FIRST_NAME}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+
+                                        <VBox>
+                                            <Label text="{i18n>MiddleName}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/MIDDLE_NAME}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>LastName}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/LAST_NAME}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>RegistrationDate}" design="Bold" />
+                                            <Text text="{path:'registrationViewModel>/retailerReg/0/REGISTRATION_DATE',type:'sap.ui.model.type.Date',formatOptions:{strictParsing:true,UTC:true,patter:'dd/MM/yyyy'}}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                    </form:content>
+                                </form:SimpleForm>
+                            </FlexBox>
+                        </uxap:blocks>
+                        <uxap:actions>
+                            <Button icon="sap-icon://edit" press="onNavToBasicInfo" />
+                        </uxap:actions>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>RetailersInformation}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <FlexBox justifyContent="Center" alignContent="Center">
+                                <form:SimpleForm width="{oFiexibleLayout>/Width}" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="12" columnsXL="1" columnsL="2" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+                                    <form:content>
+                                        <VBox>
+                                            <Label text="{i18n>CompanyName}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/COMPANY_NAME}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>StoreCount}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/STORE_COUNT}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>EmployeeCount}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/EMP_COUNT}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+
+                                        <VBox>
+                                            <Label text="{i18n>OwnershipType}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/OWNERSHIP_TYPE}" />
+
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+
+                                        <VBox>
+                                            <Label text="{i18n>BusinessCode}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/BUSINESS_CODE}" />
+
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+
+                                        <VBox>
+                                            <Label text="{i18n>NatureOfBusiness}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/BUSINESS_DESC}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>ConcessionaireSupport}" design="Bold" />
+                                            <CheckBox selected="{registrationViewModel>/retailerReg/0/CONCESSIONAIRE_SUPPORT}" editable="false" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>StoreFormat}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/STORE_FORMAT}" />
+
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                    </form:content>
+                                </form:SimpleForm>
+                            </FlexBox>
+                        </uxap:blocks>
+                        <uxap:actions>
+                            <Button icon="sap-icon://edit" press="onNavToRetailInfo" />
+                        </uxap:actions>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>ContactInformation}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <FlexBox justifyContent="Center" alignContent="Center">
+                                <form:SimpleForm width="{oFiexibleLayout>/Width}" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="12" columnsXL="1" columnsL="2" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+                                    <form:content>
+                                        <VBox>
+                                            <Label text="{i18n>PhoneCountryCode}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/PH_COUNTRY_CODE}" />
+
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>PhoneNo}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/PHONE_NUMBER}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>AltPhoneCountryCode}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/ALT_PH_COUNTRY_CODE}" />
+
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>AltPhoneNo}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/ALT_PHN_NUMBER}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>PrimaryContactName}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/LAST_NAME}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>AltEmailID}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/ALT_EMAIL_ID}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>FaxNumber}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/FAX_NUMBER}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>TeleFaxNumber}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/TELE_FAX_NUMBER}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12"  />
+                                            </layoutData>
+                                        </VBox>
+                                    </form:content>
+                                </form:SimpleForm>
+                            </FlexBox>
+                        </uxap:blocks>
+                        <uxap:actions>
+                            <Button icon="sap-icon://edit" press="onNavToContactInfo" />
+                        </uxap:actions>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>Address}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                                <VBox>
+                                    <Table inset="false" mode="None" items="{registrationViewModel>/retailerReg/0/ADDRESS}">
+                                        <columns>
+                                            <Column>
+                                                <Text text="{i18n>AddressType}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true">
+                                                <Text text="{i18n>AddressLine1}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="{i18n>AddressLine2}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="{i18n>AddressLine3}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="Country" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="{i18n>State}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="{i18n>City}" />
+                                            </Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                                <Text text="{i18n>PostalCode}" />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem vAlign="Middle">
+                                                <cells>
+                                                    <Text text="{parts:[{path:'registrationViewModel>ADDRESS_TYPE'},{path:'registrationViewModel>/ADDRESSTYPE'}], formatter:'.formatter._getDescription'}" />
+                                                    <Text text="{registrationViewModel>ADDRESS_LINE_1}" />
+                                                    <Text text="{registrationViewModel>ADDRESS_LINE_2}" />
+                                                    <Text text="{registrationViewModel>ADDRESS_LINE_3}" />
+                                                    <Text text="{registrationViewModel>COUNTRY_CODE}" />
+                                                    <Text text="{registrationViewModel>STATE}" />
+                                                    <Text text="{registrationViewModel>CITY}" />
+                                                    <Text text="{registrationViewModel>POSTAL_CODE}" />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                    <layoutData>
+                                        <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                    </layoutData>
+                                </VBox>
+                            </layout:Grid>
+                        </uxap:blocks>
+                        <uxap:actions>
+                            <Button icon="sap-icon://edit" press="onNavToAddressInfo" />
+                        </uxap:actions>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>OtherInformation}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <FlexBox justifyContent="Center" alignContent="Center">
+                                <form:SimpleForm width="{oFiexibleLayout>/Width}" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="12" columnsXL="1" columnsL="2" columnsM="1" editable="true" adjustLabelSpan="true" singleContainerFullSize="false">
+                                    <form:content>
+                                        <VBox>
+                                            <Label text="{i18n>Website}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/WEBSITE}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" linebreak="true" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>Remarks}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/REMARKS}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                        <VBox>
+                                            <Label text="{i18n>AdditionalInformation}" design="Bold" />
+                                            <Text text="{registrationViewModel>/retailerReg/0/ADDITIONAL_INFO}" />
+                                            <layoutData>
+                                                <layout:GridData span="XL12 L12 M12 S12" />
+                                            </layoutData>
+                                        </VBox>
+                                    </form:content>
+                                </form:SimpleForm>
+                            </FlexBox>
+                        </uxap:blocks>
+                        <uxap:actions>
+                            <Button icon="sap-icon://edit" press="onNavToOthersInfo" />
+                        </uxap:actions>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</core:FragmentDefinition>
