@@ -8,7 +8,7 @@
 			<OverflowToolbar>
 				<ToolbarSpacer/>
 				<!-- <Button type="Emphasized" text="Draft" press="onSubmit($event,'platformrequest?action=save')"/> -->
-				<Button type="Emphasized" class="button1 header2" width="7rem" text="Submit" press="onSubmit($event,'platformrequest?action=submit')"/>
+				<Button type="Transparent" class="button1 header2" width="7rem" text="Submit" press="onSubmit($event,'platformrequest?action=submit')"/>
                 <Button type="Transparent" class="button1 header2" width="7rem" text="Cancel" press="onCancel"/>
 			</OverflowToolbar>
 		</footer>

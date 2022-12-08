@@ -386,11 +386,11 @@
     user-select: none;
 }
 
-.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault,
+/* .sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault,    commented as its showing pink color for pop buttons in mobile
 .sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault .sapUiIcon {
     color: #6a1797;
     background-color: transparent;
-}
+} */
 
 .sapMFocus.sapMInputBase .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
     border: 0.125rem solid #841dbd;
